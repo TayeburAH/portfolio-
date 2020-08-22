@@ -415,10 +415,6 @@ button{
   opacity: 0;
 }
 
-body{
-	margin:0;
-	padding:0;
-}
 
 
 #content1{
@@ -552,8 +548,11 @@ z-index: 3;
 }
 
 
-
-
+/*  Uiu and map */
+.img-responsive{
+  width: 100%;
+  height:auto;
+}
 
 .hovereffect {
   width: 100%;
