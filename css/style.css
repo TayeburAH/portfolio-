@@ -553,6 +553,10 @@ z-index: 3;
   width: 100%;
   height:auto;
 }
+.image-container {
+  display: flex;
+  justify-content: center;
+}
 
 .hovereffect {
   width: 100%;
