@@ -93,7 +93,7 @@ $(window).on('load',function() {
 
 
     // Parallax
-    if (window.location.href != 'http://127.0.0.1:8000/contact/'){
+    if (window.location.href != 'https://tayebur-portfolio.herokuapp.com/contact/'){
         var rellax = new Rellax('.rellax');
         $('.parallax-window').parallax({imageSrc: "{%  static 'img/suit.jpg' %}"});
 
