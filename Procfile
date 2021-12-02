@@ -1,0 +1,1 @@
+web: gunicorn portfolio_tayebur.wsgi --log-file –
