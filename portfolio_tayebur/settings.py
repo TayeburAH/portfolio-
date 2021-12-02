@@ -81,6 +81,12 @@ DATABASES = {
     }
 }
 
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -122,9 +128,8 @@ STATICFILES_DIRS = [
 STATIC_URL = '/static/'  # This one is already there
 MEDIA_URL = '/media/'
 
-# Content delivery network When files python manage.py collectstatic, all the files moves in the media and static to
-# folders _cdn somewhere in the server
-STATIC_ROOT = os.path.join(BASE_DIR, 'static_cdn')  # Keep these files in the production server folder
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')    # uploaded pictures in the production server folder
 
 TEMP = os.path.join(BASE_DIR, 'media_cdn/temp')  # to store files
