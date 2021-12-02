@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!-- Bootstrap CSS -->
+<!-- <link rel="stylesheet" href="css/fakeLoader.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Font Awesome -->
+<!-- cdn link to paste in your <head> -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
+
+<script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+<script src="{% static 'js/parallax.min.js' %}"></script>
+<script src="{% static 'js/parallax.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/javascript.js' %}"></script>
+
+<!-- page title -->
+    {% block title %}
+<title>Tayebur Portfolio</title>
+    {% endblock title %}
+
+    <!-- Meta tags -->
+    <meta name="og_title" property="og:title" content="Tayebur Portfolio" />
+	<meta name="og_description" property="og:description" content="Python, Django, Postgres" />
+	<meta name="og_url" property="og:url" content="PAGE-URL" />
+	<meta name="og_type" property="og:type" content="website" />
+	<meta name="og_site_name" property="og:site_name" content="SITENAME" />
+    <meta property="og:image" content="......jpg" />
+
+
+	<meta name="twitter:card" property="twitter:card" content="Python, Django, Postgres" />
+	<meta name="twitter:url" property="twitter:url" content="PAGE-URL" />
+	<meta name="twitter:site" property="twitter:site" content="@SITENAME" />
+	<meta name="twitter:title" property="twitter:title" content="Tayebur Portfolio" />
+	<meta name="twitter:description" property="twitter:description" content="Python, Django, Postgres" />
+	<meta name="og_image" property="og:image" content="IMAGE-URL" />
+	<meta name="msapplication-TileImage" content="IMAGE-URL">
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="twitter:image" property="twitter:image" content="IMAGE-URL" />
+
+
+
+</head>
+
+
+<body class="scroll-hide bg-dark">
+<div class="whatsapp_icon" style="z-index:999">
+    <a href="https://wa.me/8801953589177?text=I'm%20interested%20in%20hiring%20you" target="_blank"><img src="{%  static 'img/white.jpg' %}" data-src ="{%  static 'img/whatsapp.png' %}" width="50px" height="50px"></a>
+</div>
+
+<div class="">
+      <div id="mySidenav">
+              <div  class="sidenav">
+                <a href="http://127.0.0.1:8000/portfolio/#mid-level" class="about">About</a>
+                <a class="nav-link project" href="http://127.0.0.1:8000/portfolio/#my_project" >My Projects</a>
+                <a href="{% url 'portfolio:contact' %}">Contact</a>
+              </div>
+      </div>
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+
+
+  <!-- Preloader
+  <div id="preloader">
+    <div id="status">&nbsp;</div>
+  </div>
+  -->
+      <header class="alternate-header" style="background-color:rgba(34, 47, 62,0.9);  position:fixed; top:-200px; z-index:100; transition:top 1s; width:100%;">
+            <nav class="navbar">
+               <ul class="d-flex flex-row list-unstyled mr-auto">
+                      <li><a href="{%  url 'portfolio:home' %}" >Home</a></li>
+                      <li><a href="{% url 'portfolio:contact' %}">Contact</a></li>
+                      <li><a href="http://127.0.0.1:8000/portfolio/#mid-level" class="about">About</a></li>
+                      <li><a href="">Blog</a></li><br>
+                      <li><button class="btn btn-primary" style="margin-top:-5px;">Join</button></li>
+               </ul>
+            </nav>
+      </header>
+      <header id="main-header" class="main-dark">
+            <nav class="navbar navbar-expand-lg" style="background-color:rgba(34, 47, 62,0.5)">
+              <div class="container-fluid">
+                  <span class="navbar-text mr-sm-auto text-uppercase" id="portfolio">Portfolio</span>
+                  <button  class="navbar-toggler ml-2" id='navbar_button' ><i class="material-icons">list</i></button>
+                   <ul  class="navbar-nav ml-auto hide-m">
+                          <li class="nav-item ">
+                            <a class="nav-link" href="{%  url 'portfolio:home' %}" >Home</a>
+                          </li>
+
+                          <li>
+                              <a class="nav-link about" href="http://127.0.0.1:8000/portfolio/#mid-level" >About</a>
+                          </li>
+
+                          <li>
+                              <a class="nav-link project" href="http://127.0.0.1:8000/portfolio/#my_project" >My Projects</a>
+                          </li>
+
+                          <li class="nav-item">
+                            <a class="nav-link" href="{% url 'portfolio:contact' %}">Contact</a>
+                          </li>
+                   </ul>
+              </div>
+            </nav>
+      </header>
+
+       {% block contents  %}
+    <div id="main" class="img-bg parallax-window py-2 mx-1" data-parallax="scroll" data-image-src="{% static 'img/suit.jpg' %}"  data-z-index="-3" data-speed="0.5" data-bleed="20">
+
+            <div id="info" class="">
+                <div class="">
+                  <figure class="snip0016 float-left" style="position:absolute;left:-50%; top:-50px">
+                    <img src="{% static 'img/Tayebur2.jpg' %}" alt="">
+                    <figcaption class="message_text">
+                        <h2><span>Tayebur </span> Python, Django developer</h2>
+                        <p>Exploring my chances through out.</p>
+                        <a href="#"></a>
+                    </figcaption>
+                  </figure>
+                </div>
+                <div class="rellax" data-rellax-desktop-speed="3" data-rellax-xs-speed="4" data-rellax-mobile-speed="3">
+                  <h1 class="animate__animated animate__fadeInUp animate__delay-2s">Hi my name is Tayebur Ahmed</h1>
+                </div>
+
+                <div class="rellax" data-rellax-desktop-speed="2.2" data-rellax-xs-speed="3" data-rellax-mobile-speed="3">
+                  <p class="text-justify animate__animated animate__fadeIn animate__delay-1s">I graduated from UIU in Electrical Electronics Engineering.
+                      My thesis was on 'Detection of heart abnormalities from heart sound'. After graduation I became a teacher for ICT and Math in an english medium school(Canadian Internal School diploma program). Here I am teaching python, django, html and css.
+                      Hope you will find my projects interesting.</p>
+                </div>
+                  <div class="rellax" data-rellax-speed="2.5" data-rellax-xs-speed="2"  data-rellax-mobile-speed="2"><button class="btn animate__animated animate__fadeInDown animate__delay-2s bg-secondary" ><a class="text-dark" href="{% static 'files/Tayebur_cv.pdf' %}" download >Download my resume</a></button></div>
+            </div>
+    </div>
+
+
+    <div  class="my-5 py-5">
+    </div>
+
+    <div id="project" class="bg-white my-4 py-4 mx-1">
+    <h4 class="text-center text-dark" id="my_project">My Projects</h4>
+    </div>
+
+    <div class="container project-box">
+        <div class="row justify-content-center mt-5">
+            <div class="col-md-4">
+                <div class="card" style="position:relative">
+                      <div class="card-body" >
+                            <h5 class="card-title">Django book shop Api Project</h5>
+                            <p class="card-text">View all books(pagination), Check particular book, CRUD operations on ordering book, View all my orders, JWT tokens, Email based login in/signup, custom reset or change password option</p>
+                            <p class="card-text">Django rest framework, Python, Django, Heroku, Heroku postgres</p>
+                            <div style="bottom:0px">
+                                <a href="https://github.com/TayeburAH/DRF_Book" class="card-link">GitHub</a>
+                                <a href="https://rest-api-book.herokuapp.com/api/" class="card-link">Project</a>
+                                <a href="{% url 'portfolio:project' project_id=1 %}" class="card-link">Details</a>
+                            </div>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <div class="card" >
+                      <div class="card-body">
+                            <h5 class="card-title">Django Fast Food store(Website)</h5>
+                            <p class="card-text">Login in/Signup, Five General Menu(Chicken, Pizzas, Burgers etc), Cart and Add Cart features, Auto Price change on selection, Order summary on every order</p>
+                            <p class="card-text">Bootstrap, HTML, CSS, JavaScript, jQuery, Python, Django, Heroku, Heroku Postgres</p>
+                            <a href="https://github.com/TayeburAH/food-website" class="card-link">GitHub</a>
+                            <a href="https://food-mania-tayebur.herokuapp.com/" class="card-link">Project</a>
+                            <a href="{% url 'portfolio:project' project_id=2 %}" class="card-link">Details</a>
+                      </div>
+                 </div>
+            </div>
+            <div class="col-md-4">
+                 <div class="card" >
+                      <div class="card-body">
+                            <h5 class="card-title">Media Gallery with PostgreSQL/MongoDB(Website)</h5>
+                            <p class="card-text">Login in/Signup, Authentication using gmail and facebook, CRUD operations on image, Image preview, Trash</p>
+                            <p class="card-text">Bootstrap, HTML, CSS, JavaScript,jQuery, Python, Django, Heroku, MongoDB</p>
+                            <a href="https://github.com/TayeburAH/food-website" class="card-link">GitHub</a>
+                            <a href="https://free-media-storage.herokuapp.com/" class="card-link">Project</a>
+                            <a href="{% url 'portfolio:project' project_id=3 %}" class="card-link">Details</a>
+                      </div>
+                 </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center my-5">
+            <div class="col-md-4">
+                <div class="card">
+                      <div class="card-body">
+                            <h5 class="card-title">Calculate total duration of YouTube playlist</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="https://github.com/TayeburAH/food-website" class="card-link">GitHub</a>
+                            <a href="https://free-media-storage.herokuapp.com/" class="card-link">Project</a>
+                            <a href="{% url 'portfolio:project' project_id=4 %}" class="card-link">Details</a>
+                      </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                 <div class="card" >
+                      <div class="card-body">
+                            <h5 class="card-title">Different Types of Authentication(Website)</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <a href="https://github.com/TayeburAH/food-website" class="card-link">GitHub</a>
+                            <a href="https://free-media-storage.herokuapp.com/" class="card-link">Project</a>
+                            <a href="{% url 'portfolio:project' project_id=5 %}" class="card-link">Details</a>
+                      </div>
+                 </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- Slideshow container -->
+    <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators" style="position:relative;bottom:-5px;">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" ></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img class="d-block img-responsive" src="{%  static 'img/white.jpg' %}" data-src ="{%  static 'img/API_Book_Store.png' %}" alt="...">
+              <div class="carousel-caption d-sm-block d-md-block">
+                <a href="{% url 'portfolio:project' project_id='1' %}" target="_blank"><h5>Django book shop Api Project</h5></a>
+
+                    <div class="d-flex flex-column  justify-content-center">
+                        <p class="text-center text-white">GitHub Link: <a href="https://github.com/TayeburAH/mediagallary" target="_blank">https://github.com/TayeburAH/mediagallary</a></p>
+                        <p class="text-center text-white">Live Project link: <a href="https://free-media-storage.herokuapp.com/" target="_blank">https://free-media-storage.herokuapp.com/</a></p>
+                    </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-responsive" src="{%  static 'img/white.jpg' %}" data-src="{%  static 'img/Food_store_website.png' %}" alt="...">
+              <div class="carousel-caption d-sm-block d-md-block" >
+                <a href="{% url 'portfolio:project' project_id=2 %}" target="_blank"><h5>Django Fast Food store(Website)</h5></a>
+                    <div class="d-flex flex-column  justify-content-center">
+                        <p class="text-center text-white">GitHub Link: <a href="https://github.com/TayeburAH/food-website" target="_blank">https://github.com/TayeburAH/food-website</a></p>
+                        <p class="text-center text-white">Live Project link: <a href="https://food-mania-tayebur.herokuapp.com/" target="_blank">https://food-mania-tayebur.herokuapp.com/</a></p>
+                    </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-responsive" src="{%  static 'img/white.jpg' %}" data-src="{%  static 'img/Media_gallery.png' %}" alt="...">
+              <div class="carousel-caption d-sm-block d-md-block">
+                <a href="{% url 'portfolio:project' project_id=3 %}" target="_blank"><h5>Media Gallery with PostgreSQL/MongoDB(Website)</h5></a>
+                    <div class="d-flex flex-column  justify-content-center">
+                        <p class="text-center text-white">GitHub Link: <a href="https://github.com/TayeburAH/mediagallary" target="_blank">https://github.com/TayeburAH/mediagallary</a></p>
+                        <p class="text-center text-white">Live Project link: <a href="https://free-media-storage.herokuapp.com/" target="_blank">https://free-media-storage.herokuapp.com/</a></p>
+                    </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-responsive" src="{%  static 'img/white.jpg' %}" data-src="{%  static 'img/Youtube_playlist_duration.png' %}" alt="...">
+              <div class="carousel-caption d-sm-block d-md-block">
+                <a href="{% url 'portfolio:project' project_id=5 %}" target="_blank"><h5>Calculate total duration of YouTube playlist </h5></a>
+                    <div class="d-flex flex-column  justify-content-center">
+                        <p class="text-center text-white">GitHub Link: <a href="https://github.com/TayeburAH/mediagallary" target="_blank">https://github.com/TayeburAH/mediagallary</a></p>
+                        <p class="text-center text-white">Live Project link: <a href="https://free-media-storage.herokuapp.com/" target="_blank">https://free-media-storage.herokuapp.com/</a></p>
+                    </div>
+              </div>
+            </div>
+
+            <div class="carousel-item">
+              <img class="d-block img-responsive" src="{%  static 'img/white.jpg' %}" data-src="{%  static 'img/All_types_of_Authentication.png' %}" alt="...">
+              <div class="carousel-caption d-sm-block d-md-block">
+                <a href="{% url 'portfolio:project' project_id=4 %}" target="_blank"><h5>Different Types of Authentication(Website)</h5></a>
+                    <div class="d-flex flex-column  justify-content-center">
+                        <p class="text-center text-white">GitHub Link: <a href="https://github.com/TayeburAH/mediagallary" target="_blank">https://github.com/TayeburAH/mediagallary</a></p>
+                        <p class="text-center text-white">Live Project link: <a href="https://free-media-storage.herokuapp.com/" target="_blank">https://free-media-storage.herokuapp.com/</a></p>
+                    </div>
+              </div>
+            </div>
+
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" >
+            <div style="background-color:gray;">
+            <i class="fas fa-angle-left p-3" style="color:black;"></i>
+            </div>
+            <span class="sr-only">Previous</span>
+          </a>
+
+          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <div style="background-color:gray;">
+              <i class="fas fa-angle-right p-3" style="color:black;"></i>
+            </div>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+
+    </div>
+
+
+    <div class="my-5 py-5">
+    </div>
+
+        <div id="skills" class="bg-white my-4 py-4 mx-1">
+        <h4 class="text-center text-dark text-uppercase">Technical Skills</h4>
+    </div>
+    <div class="skill_container">
+        <div class="container skills bg-white mx-1 my-5">
+            <h2 class="mt-5">HTML/CSS</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>70%</span>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2>JAVASCRIPT/JQUERY</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>80%</span>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2>Css</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>70%</span>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2>Python</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>80%</span>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2>Django</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>80%</span>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2>MongoDB</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>80%</span>
+                </div>
+            </div>
+            <br>
+            <br>
+
+            <h2>PostgreSQL</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>80%</span>
+                </div>
+            </div>
+
+            <br>
+            <br>
+
+            <h2>Bootstrap</h2>
+            <div class="skill_row mb-5">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>70%</span>
+                </div>
+            </div>
+
+
+
+            <h2>AWS(S3 bucket, EC2, RDS)</h2>
+            <div class="skill_row">
+                <div class="skill_view">
+                    <span class="skill_value" hidden>70%</span>
+                </div>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div id="mid-level" class="bg-white my-4 py-4 mx-1">
+        <h4 class="text-center text-dark">About Me</h4>
+    </div>
+
+    <div class="p-1">
+        <div class="pp1">
+            <div class="container d-flex flex-column justify-content-center align-items-start">
+                <div class="box-content box-content-1">
+                    <h4 class="text-uppercase">Certifications</h4>
+                     <li>HTML, CSS, and javascript from Coursera.</li>
+                     <li>Python, Django from BITM.</li>
+                     <li>Core java Programming from BITM.</li>
+                </div>
+            </div>
+        </div>
+
+        <div class="pp2">
+            <div class="container d-flex flex-column justify-content-center align-items-end">
+                <div class="box-content box-content-2">
+                    <h4 class="text-uppercase">My future plan/Goals</h4>
+                        <p>My goal is to put my knowledge to master odoo, solve bugs and grow more in experience.
+                        After this, my final step is to study in data science.
+                        </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pp3">
+            <div class="container d-flex flex-column justify-content-center align-items-start">
+                <div class="box-content box-content-1" data-scroll>
+                    <h4 class="text-uppercase">My message to your company</h4>
+                    <p>I will bring all of my skills, qualities, values, interests, academic knowledge, life experience
+                        to your company. Hopefully I will get the job done.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="pp4">
+            <div class="container d-flex flex-column justify-content-center align-items-end">
+                <div class="box-content box-content-2" data-scroll>
+                    <h4 class="text-uppercase">Personal skills </h4>
+                     <li>Microsoft Word, PowerPoint and Excel</li>
+                     <li>Quick-learning skills</li>
+                     <li>Verbal and written communication skills</li>
+                     <li>Time-management skills</li>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="pp5">
+          <div class="container d-flex flex-column justify-content-center align-items-start">
+              <div class="box-content box-content-1" data-scroll>
+                    <h4 class="text-uppercase text-center">Education Background</h4>
+                      <div>
+                        <p class="text-center">BSc in Electrical Electronics Engineer from United International School</p>
+                        <div class="d-flex justify-content-center">
+                           <img class="rounded" src="{%  static 'img/white.jpg' %}" data-src ="{% static 'img/uiu/uiu.jpg'  %}" width="150px" height="150px">
+                         </div>
+                      </div>
+                      <div class="mt-3">
+                        <p class="text-center">Olevels and Alevels from Bangladesh International School, Dammam</p>
+                        <div class="d-flex justify-content-center">
+                           <img class="rounded" src="{%  static 'img/white.jpg' %}" data-src ="{% static 'img/uiu/BIS.jpg'  %}" width="200px" height="150px">
+                         </div>
+                      </div>
+              </div>
+          </div>
+        </div>
+
+    </div>
+
+    <div class="my-5 py-5">
+    </div>
+
+
+    <div id="pdf" class="bg-white my-4 py-4 mx-1 ">
+        <h4 class="text-center text-dark">Download my resume</h4>
+        <h4 class="text-center"><a class="" href="{% static 'files/Tayebur_cv.pdf' %}" download >Tayebur_cv.pdf</a></h4>
+    </div>
+
+
+<!--
+<div class="container" style="margin-top:10%;">
+
+<div id="content2" >
+
+
+  <div  id="scene" class="info-me d-flex mx-auto">
+    <div  data-depth="-0.5" class="align-self-center justify-self-center text-white"><h5>Md Tayebur Ahmed</h5>
+    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  </div>
+  </div>
+</div>
+
+
+
+</div>
+
+    -->
+</div>
+
+
+{% endblock contents  %}
+
+
+<!-- Footer -->
+<div id="footer-span" class="d-flex justify-content-center align-items-center">
+
+  <a href="https://www.facebook.com/takib.ahmed.1/" target="_blank"><i class="material-icons" style="font-size: 50px;">facebook</i></a>
+  <a href="https://www.linkedin.com/in/mohammad-tayebur-ahmed-220a70171/"><i class="fab fa-linkedin" style="font-size: 50px"></i></a>
+  <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=DmwnWrRpfDZdZTDZRsVNBHCqSdqxbZfdpnwCHKBLqfcWrrXqTJZtCmDGNwDbpDdLcdwMNpgpCwdq" target="_blank"><i class="material-icons" style="font-size: 50px">email</i></a>
+  <a href="https://github.com/TayeburAH?tab=repositories"><i class="fab fa-github" style="font-size: 50px"></i></a>
+
+</div>
+
+
+<div class="footer-top">
+<div class="container-fluid">
+<div class="row footer_text">
+  <div class="col-lg-4 col-md-12 col-sm-12 segment">
+    <h5>Heading1</h5>
+    <hr style="border: 2px solid;background-color:black">
+    <p class="p-1">As well as revealing the new footage, Muschietti and star Jessica Chastain also proudly declared that one particular scene in Chapter Two is the bloodiest ever made. The director said that over 4500 gallons of fake blood were used in the scene, which the filmmaker claims to be a world record.</p>
+  </div>
+
+  <div class="col-lg-4 col-md-12 col-sm-12 segment">
+    <h5>Heading2</h5>
+    <hr style="border: 2px solid;background-color:black">
+    <p class="p-1">Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research.</p>
+  </div>
+
+
+  <div class="col-lg-4 col-md-12 col-sm-12 segment">
+    <h5>Contact</h5>
+    <hr style="border: 2px solid;background-color:black">
+    <ul class="list-unstyled">
+      <li><i class="mr-3 material-icons align-bottom">home</i>Dakha 12,House 50,Road 19</li>
+
+      <li><i class="mr-3 material-icons align-bottom">mail</i>
+          <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=DmwnWrRpfDZdZTDZRsVNBHCqSdqxbZfdpnwCHKBLqfcWrrXqTJZtCmDGNwDbpDdLcdwMNpgpCwdq" target="_blank">tayebur687@gmail.com</a></li>
+      <li><i class="mr-3 material-icons align-bottom">call</i><a href="tel:+8801953589177">+8801953589177</a></li>
+    </ul>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="footer-bottom">
+<p class="text-center py-3 text-white">&copy; Copyright Tayebur Ahmed 2020</p>
+</div>
+
+</body>
+
+</html>

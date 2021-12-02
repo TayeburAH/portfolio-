@@ -1,0 +1,124 @@
+{% extends 'index.html'%}
+{% load static %}
+
+{% block title %}
+<title>My Projects</title>
+{% endblock title %}
+
+{% block contents %}
+<style>
+  ul {
+  display: inline-block;
+}
+
+</style>
+<div id="mid-level" class="bg-dark mb-4">
+<h4 class="text-center text-white">Media Gallery with MongoDB(Website)</h4>
+</div>
+
+<div class="container-fluid">
+ <!-- Gallery -->
+    <div class="d-flex flex-row justify-content-center">
+        <!-- column 1 -->
+        <ul class="m-5 ml-5 text-white" >
+            <h5>Features</h5>
+            <li>Login in/Signup</li>
+            <li>Authentication using gmail and facebook</li>
+            <li>CRUD operations on image</li>
+            <li>Image preview</li>
+            <li>Trash</li>
+
+        </ul>
+
+        <!-- column 2 -->
+        <ul class="m-5 ml-2 text-white">
+            <h5>Frontend and Backend languages</h5>
+            <li>Bootstrap, HTML, CSS</li>
+            <li>JavaScript/jQuery</li>
+            <li>Python, Django</li>
+            <li>Heroku</li>
+            <li>MongoDB</li>
+        </ul>
+    </div>
+
+    <div class="d-flex flex-column  justify-content-center">
+        <p class="text-center text-white">GitHub Link: <a href="https://github.com/TayeburAH/mediagallary" target="_blank">https://github.com/TayeburAH/mediagallary</a></p>
+        <p class="text-center text-white">Live Project link: <a href="https://free-media-storage.herokuapp.com/" target="_blank">https://free-media-storage.herokuapp.com/</a></p>
+    </div>
+<h5 class="text-center mt-5 text-white">Images of the website</h5>
+<div class="row my-5">
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/1.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/2.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+  <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/3.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/4.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+   <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/5.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/6.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/7.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/8.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/9.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+
+    <img src="{%  static 'img/white.jpg' %}"
+      data-src="{% static 'img/3/10.png' %}"
+      class="w-100 shadow-1-strong rounded mb-4"
+      alt=""
+    />
+  </div>
+
+</div>
+<!-- Gallery -->
+</div>
+{% endblock contents %}
