@@ -55,7 +55,7 @@ if ( $('#portfolio').hasClass('navbar-text-middle') ){
     // Remove all effects on of sidebar
     remove_all_effects_on_of_sidebar()
 }
-$("html, body").animate({ scrollTop: $('#my_project').offset().top }, 1000);
+    $("html, body").animate({ scrollTop: $('#my_project').offset().top }, 1000);
 });
 
 
@@ -103,9 +103,6 @@ $(window).on('load',function() {
 
     }
 
-
-
-
     $(window).on('load', function() { // makes sure the whole site is loaded
         $('#status').fadeOut(); // will first fade out the loading animation
         $('#preloader').delay(350).fadeOut(); // will fade out the white DIV that covers the website.
@@ -141,16 +138,6 @@ $(window).on('load',function() {
                 remove_all_effects_on_of_sidebar()
             }
         });
-
-
-
-
-
-
-
-
-
-
 
 
 });
