@@ -86,7 +86,6 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -119,27 +118,24 @@ USE_L10N = True
 USE_TZ = True
 
 # <----- static and media --------->
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'), # now django know where are static files
-    os.path.join(BASE_DIR, 'media'),  # now django know where are media files
+    os.path.join(BASE_DIR, 'static'),  # now django know where are static files
+    # os.path.join(BASE_DIR, 'media'),  # now django know where are media files
 ]
 
 # creates url for all static files
-STATIC_URL = '/static/'  # This one is already there
+
 MEDIA_URL = '/media/'
-
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')    # uploaded pictures in the production server folder
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media_cdn')  # uploaded pictures in the production server folder
 
 TEMP = os.path.join(BASE_DIR, 'media_cdn/temp')  # to store files
-
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 django_heroku.settings(locals())
-
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
