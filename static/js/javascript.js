@@ -24,6 +24,7 @@ function remove_all_effects_on_of_sidebar(){
         $(".navbar-text").removeClass("navbar-text-middle");
         $("#main").removeClass("main-dark");
         $("body").removeClass("body-fixed");
+        $('.contact_content').removeClass('contact_content_blur')
 }
 
 function scroll_checker(nav){
@@ -45,7 +46,7 @@ if ( $('#portfolio').hasClass('navbar-text-middle') ){
     // Remove all effects on of sidebar
     remove_all_effects_on_of_sidebar()
 }
-$("html").animate({ scrollTop: $('#mid-level').offset().top }, 1000);
+$("html").animate({ scrollTop: $('#about_catagory').offset().top }, 1000);
 });
 
 
@@ -86,28 +87,25 @@ $(window).scroll(function() {
 
 $(window).on('load',function() {
     var nav = $('#skills');
-    //console.log(nav.length)
     scroll_checker(nav)
 });
-
-    console.log('Hi')
-    console.log(window.location.href != 'http://127.0.0.1:8000/contact/')
+   /* console.log(window.location.href != 'http://127.0.0.1:8000/contact/') */
 
 
     // Parallax
     if (window.location.href != 'http://127.0.0.1:8000/contact/'){
-        var $scene = $("#scene");
-        var parallaxInstance = new Parallax(scene);
         var rellax = new Rellax('.rellax');
-        $('.parallax-window').parallax({imageSrc: '/img/pp.jpg'});
+        $('.parallax-window').parallax({imageSrc: "{%  static 'img/suit.jpg' %}"});
 
     }
 
+/*
     $(window).on('load', function() { // makes sure the whole site is loaded
         $('#status').fadeOut(); // will first fade out the loading animation
         $('#preloader').delay(350).fadeOut(); // will fade out the white DIV that covers the website.
         $('body').delay(350).css({'overflow':'visible'});
     });
+*/
 
     $(window).scroll(function () {
       if($(this).scrollTop() > 600){

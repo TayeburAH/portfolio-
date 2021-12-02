@@ -27,18 +27,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js" integrity="sha512-f5HTYZYTDZelxS7LEQYv8ppMHTZ6JJWglzeQmr0CVTS70vJgaJiIO15ALqI7bhsracojbXkezUIL+35UXwwGrQ==" crossorigin="anonymous"></script>
-
 <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
 <script src="{% static 'js/parallax.min.js' %}"></script>
-<script src="{% static 'js/parallax.js' %}"></script>
+<script src="{% static 'js/rellax.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/javascript.js' %}"></script>
 
 <!-- page title -->
     {% block title %}
-<title>Tayebur Portfolio</title>
+    <title>Tayebur Portfolio</title>
     {% endblock title %}
 
     <!-- Meta tags -->
@@ -92,7 +88,7 @@
                       <li><a href="{%  url 'portfolio:home' %}" >Home</a></li>
                       <li><a href="{% url 'portfolio:contact' %}">Contact</a></li>
                       <li><a href="https://tayebur-portfolio.herokuapp.com/portfolio/#about_catagory" class="about">About</a></li>
-                      <li><a href="">Blog</a></li><br>
+                      <!-- <li><a href="">Blog</a></li><br> -->
                       <li><button class="btn btn-primary" style="margin-top:-5px;">Join</button></li>
                </ul>
             </nav>
@@ -129,7 +125,7 @@
             <div id="info" class="">
                 <div class="">
                   <figure class="snip0016 float-left" style="position:absolute;left:-50%; top:-50px">
-                    <img src="{% static 'img/Tayebur2.jpg' %}" alt="">
+                    <img src="{%  static 'img/white.jpg' %}" data-src="{% static 'img/Tayebur2.jpg' %}" alt="">
                     <figcaption class="message_text">
                         <h2><span>Tayebur </span> Python, Django developer</h2>
                         <p>Exploring my chances through out.</p>
@@ -411,9 +407,9 @@
     </div>
 
     <div class="p-1">
-        <div class="pp1">
-            <div class="container d-flex flex-column justify-content-center align-items-start">
-                <div class="box-content box-content-1">
+        <div class="pp1 bg-white" >
+            <div class="container">
+                <div class="box-content box-content-1" style="position:relative;top:5rem">
                     <h4 class="text-uppercase">Certifications</h4>
                      <li>HTML, CSS, and javascript from Coursera.</li>
                      <li>Python, Django from BITM.</li>
@@ -423,47 +419,47 @@
         </div>
 
         <div class="pp2">
-            <div class="container d-flex flex-column justify-content-center align-items-end">
-                <div class="box-content box-content-2">
-                    <h4 class="text-uppercase">My future plan/Goals</h4>
-                        <p>My goal is to put my knowledge to master odoo, solve bugs and grow more in experience.
-                        After this, my final step is to study in data science.
-                        </p>
+            <div class="container">
+                <div class="box-content box-content-2" style="position:relative;top:5rem">
+                        <h4 class="text-uppercase">My future plan/Goals</h4>
+                            <p>My goal is to put my knowledge to master odoo, solve bugs and grow more in experience.
+                            After this, my final step is to study in data science.
+                            </p>
                 </div>
             </div>
         </div>
 
         <div class="pp3">
-            <div class="container d-flex flex-column justify-content-center align-items-start">
-                <div class="box-content box-content-1" data-scroll>
-                    <h4 class="text-uppercase">My message to your company</h4>
-                    <p>I will bring all of my skills, qualities, values, interests, academic knowledge, life experience
-                        to your company. Hopefully I will get the job done.
-                    </p>
+            <div class="container">
+                <div class="box-content box-content-1" style="position:relative;top:5rem">
+                        <h4 class="text-uppercase">My message to your company</h4>
+                        <p>I will bring all of my skills, qualities, values, interests, academic knowledge, life experience
+                            to your company. Hopefully I will get the job done.
+                        </p>
                 </div>
             </div>
         </div>
 
         <div class="pp4">
-            <div class="container d-flex flex-column justify-content-center align-items-end">
-                <div class="box-content box-content-2" data-scroll>
-                    <h4 class="text-uppercase">Personal skills </h4>
-                     <li>Microsoft Word, PowerPoint and Excel</li>
-                     <li>Quick-learning skills</li>
-                     <li>Verbal and written communication skills</li>
-                     <li>Time-management skills</li>
+            <div class="container">
+                <div class="box-content box-content-2" style="position:relative;top:5rem">
+                        <h4 class="text-uppercase">Personal skills </h4>
+                         <li>Microsoft Word, PowerPoint and Excel</li>
+                         <li>Quick-learning skills</li>
+                         <li>Verbal and written communication skills</li>
+                         <li>Time-management skills</li>
                 </div>
             </div>
         </div>
 
 
         <div class="pp5">
-          <div class="container d-flex flex-column justify-content-center align-items-start">
-              <div class="box-content box-content-1" data-scroll>
-                    <h4 class="text-uppercase text-center">Education Background</h4>
+            <div class="container">
+                  <div class="box-content box-content-1" style="position:relative;top:4rem">
+                      <h4 class="text-uppercase text-center">Education Background</h4>
                       <div>
-                        <p class="text-center">BSc in Electrical Electronics Engineer from United International School</p>
-                        <div class="d-flex justify-content-center">
+                         <p class="text-center">BSc in Electrical Electronics Engineer from United International School</p>
+                         <div class="d-flex justify-content-center">
                            <img class="rounded" src="{%  static 'img/white.jpg' %}" data-src ="{% static 'img/uiu/uiu.jpg'  %}" width="150px" height="150px">
                          </div>
                       </div>
@@ -473,17 +469,17 @@
                            <img class="rounded" src="{%  static 'img/white.jpg' %}" data-src ="{% static 'img/uiu/BIS.jpg'  %}" width="200px" height="150px">
                          </div>
                       </div>
-              </div>
-          </div>
-        </div>
+                  </div>
+            </div>
 
+        </div>
     </div>
 
     <div class="my-5 py-5">
     </div>
 
 
-    <div id="pdf" class="bg-white my-4 py-4 mx-1 ">
+    <div id="pdf" class="bg-white my-4 py-4 mx-1">
         <h4 class="text-center text-dark">Download my resume</h4>
         <h4 class="text-center"><a class="" href="{% static 'files/Tayebur_cv.pdf' %}" download >Tayebur_cv.pdf</a></h4>
     </div>
@@ -513,46 +509,43 @@
 {% endblock contents  %}
 
 
-<!-- Footer -->
-<div id="footer-span" class="d-flex justify-content-center align-items-center">
-
-  <a href="https://www.facebook.com/takib.ahmed.1/" target="_blank"><i class="material-icons" style="font-size: 50px;">facebook</i></a>
-  <a href="https://www.linkedin.com/in/mohammad-tayebur-ahmed-220a70171/"><i class="fab fa-linkedin" style="font-size: 50px"></i></a>
-  <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=DmwnWrRpfDZdZTDZRsVNBHCqSdqxbZfdpnwCHKBLqfcWrrXqTJZtCmDGNwDbpDdLcdwMNpgpCwdq" target="_blank"><i class="material-icons" style="font-size: 50px">email</i></a>
-  <a href="https://github.com/TayeburAH?tab=repositories"><i class="fab fa-github" style="font-size: 50px"></i></a>
-
-</div>
-
-
 <div class="footer-top">
-<div class="container-fluid">
-<div class="row footer_text">
-  <div class="col-lg-4 col-md-12 col-sm-12 segment">
-    <h5>Heading1</h5>
-    <hr style="border: 2px solid;background-color:black">
-    <p class="p-1">As well as revealing the new footage, Muschietti and star Jessica Chastain also proudly declared that one particular scene in Chapter Two is the bloodiest ever made. The director said that over 4500 gallons of fake blood were used in the scene, which the filmmaker claims to be a world record.</p>
-  </div>
+    <div class="container-fluid" style="font-size:20px">
+            <div class="row footer_text">
+              <div class="col-lg-4 col-md-12 col-sm-12 segment">
+                <h5>Heading1</h5>
+                <hr style="border: 2px solid;background-color:black">
+                <p class="p-1">As well as revealing the new footage, Muschietti and star Jessica Chastain also proudly declared that one particular scene in Chapter Two is the bloodiest ever made. The director said that over 4500 gallons of fake blood were used in the scene, which the filmmaker claims to be a world record.</p>
+              </div>
 
-  <div class="col-lg-4 col-md-12 col-sm-12 segment">
-    <h5>Heading2</h5>
-    <hr style="border: 2px solid;background-color:black">
-    <p class="p-1">Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research.</p>
-  </div>
+              <div class="col-lg-4 col-md-12 col-sm-12 segment">
+                <h5>Heading2</h5>
+                <hr style="border: 2px solid;background-color:black">
+                <p class="p-1">Education is the process of facilitating learning, or the acquisition of knowledge, skills, values, beliefs, and habits. Educational methods include teaching, training, storytelling, discussion and directed research.</p>
+                  <div id="footer-span" class="d-flex justify-content-center align-items-center">
+
+                      <a href="https://www.facebook.com/takib.ahmed.1/" target="_blank"><i class="material-icons" style="font-size: 30px;">facebook</i></a>
+                      <a href="https://www.linkedin.com/in/mohammad-tayebur-ahmed-220a70171/"><i class="fab fa-linkedin" style="font-size: 30px"></i></a>
+                      <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=DmwnWrRpfDZdZTDZRsVNBHCqSdqxbZfdpnwCHKBLqfcWrrXqTJZtCmDGNwDbpDdLcdwMNpgpCwdq" target="_blank"><i class="material-icons" style="font-size: 30px">email</i></a>
+                      <a href="https://github.com/TayeburAH?tab=repositories"><i class="fab fa-github" style="font-size: 30px"></i></a>
+
+                </div>
+              </div>
 
 
-  <div class="col-lg-4 col-md-12 col-sm-12 segment">
-    <h5>Contact</h5>
-    <hr style="border: 2px solid;background-color:black">
-    <ul class="list-unstyled">
-      <li><i class="mr-3 material-icons align-bottom">home</i>Dakha 12,House 50,Road 19</li>
+              <div class="col-lg-4 col-md-12 col-sm-12 segment">
+                <h5>Contact</h5>
+                <hr style="border: 2px solid;background-color:black">
+                <ul class="list-unstyled">
+                  <li><i class="mr-3 material-icons align-bottom">home</i>Dakha 12,House 50,Road 19</li>
 
-      <li><i class="mr-3 material-icons align-bottom">mail</i>
-          <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=DmwnWrRpfDZdZTDZRsVNBHCqSdqxbZfdpnwCHKBLqfcWrrXqTJZtCmDGNwDbpDdLcdwMNpgpCwdq" target="_blank">tayebur687@gmail.com</a></li>
-      <li><i class="mr-3 material-icons align-bottom">call</i><a href="tel:+8801953589177">+8801953589177</a></li>
-    </ul>
-  </div>
-</div>
-</div>
+                  <li><i class="mr-3 material-icons align-bottom">mail</i>
+                      <a href="https://mail.google.com/mail/u/0/?tab=rm#inbox?compose=DmwnWrRpfDZdZTDZRsVNBHCqSdqxbZfdpnwCHKBLqfcWrrXqTJZtCmDGNwDbpDdLcdwMNpgpCwdq" target="_blank">tayebur687@gmail.com</a></li>
+                  <li><i class="mr-3 material-icons align-bottom">call</i><a href="tel:+8801953589177">+8801953589177</a></li>
+                </ul>
+              </div>
+            </div>
+    </div>
 </div>
 
 <div class="footer-bottom">
