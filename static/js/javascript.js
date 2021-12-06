@@ -61,7 +61,7 @@ if ( $('#portfolio').hasClass('navbar-text-middle') ){
 
 
 var image = $('img'); //
-$.each(image, function(key, image){ // splits the dictionary, image is a DOM now
+$.each(image, function(key, image){ // splits the dictionary(image), image is a DOM now
 var downloadingImage = new Image();
 console.log(image.getAttribute("data-src"))
 //downloadingImage.src = "https://c1.thejournal.ie/media/2019/06/graham-27-752x501.png";

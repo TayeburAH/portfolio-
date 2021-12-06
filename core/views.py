@@ -64,3 +64,6 @@ def project(request, project_id):
 
     if project_id == str(4):
         return render(request, 'core/Different_Types_of_Authentication.html')
+
+    if project_id == str(5):
+        return render(request, 'core/Django_Chat_App.html')
